@@ -1,0 +1,29 @@
+<ion-content>
+
+  <img class="image-background" src="./assets/img/logo_sams.png" />
+
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+    <ion-list padding>
+      <ion-item>
+        <ion-label>
+          <ion-icon ios="md-person" md="md-person"></ion-icon>
+        </ion-label>
+          <ion-input formControlName="userAccount" type="email" placeholder="Usuario Walmart"></ion-input>  
+      </ion-item>
+      <ion-item>
+          <ion-label>
+            <ion-icon name="lock"></ion-icon>
+          </ion-label>
+          <ion-input formControlName="userPassword" type="password" placeholder="Contraseña"></ion-input>  
+      </ion-item>
+      <button class="button-session" type="submit" ion-button block color="secondary">Iniciar Sesión</button>
+    </ion-list>
+  </form>
+  <br>
+  <div>
+    <span id="succes">{{textLogin}}</span>
+  </div>
+</ion-content>
+<ion-footer no-border>
+  <h4 style="text-align: center; font-size: 13px; color: #A4A4A4;">Versión: {{versionApp}}</h4>
+</ion-footer>

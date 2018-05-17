@@ -1,0 +1,47 @@
+<ion-header>
+  <div class="header-card">
+      <ion-grid>
+          <ion-row align-items-center>
+              <ion-col offset-2 col-8>
+                  <p class="header-tittle">
+                      <strong>Bienvenido {{userInfo.userName}}</strong>
+                  </p>
+              </ion-col>
+              <ion-col col-2 style="text-align: center; font-size: 15pt;">
+                <ion-icon ios="md-person" md="md-person"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row class="header-body" align-items-center>
+              <ion-col col-8>
+                  <p class="header-porcentage-tittle">Tu porcentaje de captura</p>
+              </ion-col>
+
+              <ion-col class="header-porcentage" col-4>
+                  <h1 class="tittle">{{userInfo.porcentage}}%</h1>
+                  <small>{{userInfo.progress}} de {{userInfo.total}} articulos</small>
+              </ion-col>
+
+          </ion-row>
+
+      </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content>
+
+  <div class="body">
+        <div style="padding: 2px;" class="notification-section">
+
+                <ion-card>
+                    <ion-card-content style="text-align: center;">
+                        <p>{{notification.text}}</p>
+                        <button style="padding: 5px; width: 80px; color: white; background-color: #1f386b;">OK</button>
+                    </ion-card-content>
+                </ion-card>
+      
+            </div>
+       <ion-item-group>
+          <ion-item-divider color="light">Esta semana</ion-item-divider>
+      </ion-item-group>
+  </div>
+</ion-content>

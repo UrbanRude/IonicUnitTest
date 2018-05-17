@@ -1,0 +1,16 @@
+[
+    {
+        "reasons": 0,
+        "responseTime": 0,
+        "operationCode": "0",
+        "responseCode": "200",
+        "responseDescription": "Servicio ejecutado correctamente!",
+        "responseDateTime": "2017-07-05T08:48:00.5011998-06:00"
+    },
+    {
+        "DomaintItemsResult": [
+            "188",
+            "Orden de trabajo enviada."
+        ]
+    }
+]
