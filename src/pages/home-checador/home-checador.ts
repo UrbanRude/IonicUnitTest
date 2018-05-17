@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModeloCompetidores } from './modelo-competidores';
 
 /**
  * Generated class for the HomeChecadorPage page.
@@ -22,6 +23,14 @@ export class HomeChecadorPage {
     total:null
   }
 
+  render:boolean=true;
+
+  modeloCompetidores:ModeloCompetidores;
+  modeloCompetidoresII:ModeloCompetidores;
+  modeloCompetidoresIII:ModeloCompetidores;
+  img_demo: string = "./assets/img";
+  listCompetidores = Array<ModeloCompetidores>();
+
   notification = {
     text:'ASDASFASDFSADFSDFASDFASDFASDFASDFASDFASDFASDFASDFASDFSADFASDFSADFSADFASDFSADF'
   }
@@ -37,8 +46,26 @@ export class HomeChecadorPage {
     this.userInfo.progress = 56;
     this.userInfo.total = 75;
     this.userInfo.userName = 'Urbano'
+    this.modeloCompetidores = new ModeloCompetidores();
+    this.modeloCompetidores.setCompetidorName('City-Club');
+    this.modeloCompetidores.setStatusCompetidor('');
+    this.modeloCompetidores.setImgCompetidor(`${this.img_demo}/City-Club.png`);
+    this.modeloCompetidoresII = new ModeloCompetidores();
+    this.modeloCompetidoresII.setCompetidorName('Costco');
+    this.modeloCompetidoresII.setStatusCompetidor('');
+    this.modeloCompetidoresII.setImgCompetidor(`${this.img_demo}/Costco.png`)
+    this.modeloCompetidoresIII = new ModeloCompetidores();
+    this.modeloCompetidoresIII.setCompetidorName('Sams-Club');
+    this.modeloCompetidoresIII.setStatusCompetidor('');
+    this.modeloCompetidoresIII.setImgCompetidor(`${this.img_demo}/Sams-Club.png`)
+    this.listCompetidores[0] = this.modeloCompetidores;
+    this.listCompetidores[1] = this.modeloCompetidoresII;
+    this.listCompetidores[2] = this.modeloCompetidoresIII;
+  }
 
-
+  hide(){
+    console.log(1);
+    this.render = false;
   }
 
 }

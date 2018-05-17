@@ -15,33 +15,45 @@
               <ion-col col-8>
                   <p class="header-porcentage-tittle">Tu porcentaje de captura</p>
               </ion-col>
-
               <ion-col class="header-porcentage" col-4>
                   <h1 class="tittle">{{userInfo.porcentage}}%</h1>
                   <small>{{userInfo.progress}} de {{userInfo.total}} articulos</small>
               </ion-col>
-
           </ion-row>
-
       </ion-grid>
   </div>
 </ion-header>
-
 <ion-content>
-
   <div class="body">
         <div style="padding: 2px;" class="notification-section">
-
-                <ion-card>
-                    <ion-card-content style="text-align: center;">
-                        <p>{{notification.text}}</p>
-                        <button style="padding: 5px; width: 80px; color: white; background-color: #1f386b;">OK</button>
-                    </ion-card-content>
-                </ion-card>
-      
-            </div>
+            <ion-card>
+                <ion-card-content style="text-align: center;">
+                    <p>{{notification.text}}</p>
+                    <button style="padding: 5px; width: 80px; color: white; background-color: #1f386b;" (click)="hide(index)">OK</button>
+                </ion-card-content>
+            </ion-card>
+        </div>
        <ion-item-group>
-          <ion-item-divider color="light">Esta semana</ion-item-divider>
+          <ion-item-divider color="light">Esta semana</ion-item-divider>        
+          <ion-item *ngFor="let store of listCompetidores; let index = index">
+          <ion-grid>
+              <ion-row align-items-center>
+                  <ion-col col-2>
+                      <img src="{{store.getImgCompetidor()}}">
+                  </ion-col>
+                  <ion-col col-6>
+                      <h2 style="text-align: left;">
+                          <strong>{{store.getCompetidorName()}}</strong>
+                      </h2>
+                  </ion-col>
+                  <ion-col col-4>
+                      <h2 style="text-align: right;" [ngStyle]="{ 'color' : store.statusCompetidor == 'CAPTURADO' ? '#8e9093' : 'black' }">
+                          <strong>{{store.getStatusCompetidor()}}</strong>
+                      </h2>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+          </ion-item>
       </ion-item-group>
   </div>
 </ion-content>
